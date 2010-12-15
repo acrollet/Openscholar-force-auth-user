@@ -5,7 +5,7 @@
 /**
  * hook strongarm
  */
-function scholar_strongarm(){
+function unt_scholar_strongarm(){
   $conf = array();
   
   // the default project site theme
