@@ -1,0 +1,6 @@
+name = UNT Scholar
+description = "This module customizes certain openscholar settings for UNT use"
+dependencies[] = "scholarregister"
+dependencies[] = "scholar"
+package = UNT
+core = 6.x
