@@ -5,17 +5,17 @@
 /**
  * hook strongarm
  */
-function unt_scholar_strongarm_alter(&$items) {
-  watchdog('unt_scholar', 'strongarm items look like @items', array('@items' => var_dump($items)));
-  
+function unt_scholar_strongarm() {
   // the default project site theme
-  $items['openscholar_vsite_default_theme']->value = 'scholar-unt_stripy';
+  $items['openscholar_vsite_default_theme'] = 'scholar-unt_stripy';
 
   // list of themes, one will be randomly selected as default for new sites created
-  $items['openscholar_selected_themes']->value = array('scholar-unt_stripy');
+  $items['openscholar_selected_themes'] = array('scholar-unt_stripy');
 
   // setting determines if a non admin user can create multiple sites
-  $items['scholar_create_multiple_sites']->value = 0;
+  $items['scholar_create_multiple_sites'] = 0;
+
+  return $items;
 }
 
 function unt_scholar_menu_alter(&$items) {
