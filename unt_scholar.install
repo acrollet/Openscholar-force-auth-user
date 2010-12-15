@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * Implementaton of hook_enable().
+ */
+function unt_scholar_enable() {
+  // Weight unt_scholar to be after scholar & scholarregister
+  $weight = db_result(db_query("SELECT weight FROM {system} WHERE type = 'module' AND name = 'scholar'"));
+  $weight2 = db_result(db_query("SELECT weight FROM {system} WHERE type = 'module' AND name = 'scholarregister'"));
+  db_query("UPDATE {system} SET weight = %d WHERE name = 'unt_scholar'", (max($weight, $weight2) + 1));  
+}
+
+
+
+function unt_scholar_install() {
+  // hook_install has no return value
+}
+
